@@ -1,0 +1,69 @@
+//--- 010 Editor v9.0.2 Binary Template
+//
+//      File: Skills
+//   Authors: Tilde
+//   Version: 1.00
+//   Purpose: 
+//  Category: Unknown file
+// File Mask: 
+//  ID Bytes: 
+//   History: 
+//------------------------------------------------
+LittleEndian();
+
+struct File {
+
+        float header[0x20]<bgcolor=cLtGreen>; 
+        int effectCount;
+        int otherHeader[3];
+	
+	struct Effects{
+		float unk[16];
+		float XPos;
+		float YPos;
+		float unk1[7];
+		int unk2;
+		float unk3[6];
+		int unk4[4];
+		int pointerToData;
+		int unk5[2];
+		byte effectString[36];
+		//16 or 0x40 - Float of X coor
+		//17 or 0x44 - Float of Y coor
+		//0x90 pointer to effect data
+	}effect[effectCount];
+    local int i<hidden=true>;
+    for(i = 0; i<effectCount; i++){
+    FSeek(effect[i].pointerToData);
+        struct effectData{
+            int unk[12];
+			byte red1;
+			byte green1;
+			byte blue1;
+			byte alpha1;
+			byte red2;
+			byte green2;
+			byte blue2;
+			byte alpha2;
+			byte unk2[4];
+			float unk3;
+			byte unk4[4];
+			float unk5[3];
+			int unk6[2];
+			float unk7[2];//Something to do with when the effect draws
+			int unk8;
+			float unk9[6];
+			int unk10[5];
+			float angle_1;
+			float angle_2;
+			float unk11[8];
+			int unk12;
+			float unk13[5];
+			float VerticalScale1;
+			float VerticalScale2;
+			float unk14[9];
+			float HorizontalScale1;
+			float HorizontalScale2;
+        }effData;
+    }
+} file;

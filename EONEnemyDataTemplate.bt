@@ -1,0 +1,74 @@
+//--- 010 Editor v9.0.2 Binary Template
+//
+//      File: Skills
+//   Authors: Tilde
+//   Version: 1.00
+//   Purpose: 
+//  Category: Unknown file
+// File Mask: 
+//  ID Bytes: 
+//   History: 
+//------------------------------------------------
+LittleEndian();
+
+struct File {
+    struct Enemy{
+    short Level<bgcolor=cBlack>;
+	short ScriptID<bgcolor=cBlack>;
+	int	HP;
+	short unk1;
+	short unk2;
+	int TP;
+	int EXP;
+	int unk3;
+	short Str;
+	short Vit;
+	short Agl;
+	short Luc;
+	short Int;
+	short Wis;
+	struct AttackType{
+		short bit0 : 1<name="Cut">;
+		short bit1 : 1<name="Bash">;
+		short bit2 : 1<name="Stab">;
+		short bit3 : 1<name="Fire">;
+		short bit4 : 1<name="Ice">;
+		short bit5 : 1<name="Volt">;
+		short bit6 : 1<name="Almighty">;
+		short bit7 : 1<name="???">;
+	}element<name="Element Type">;
+	short Accuracy;
+	short CutResistance;
+	short StabResistance;
+	short BashResistance;
+	short FireResistance;
+	short IceResistance;
+	short VoltResistance;
+	short InstantDeathResistance;
+	short PetrificationResistance;
+	short SleepResistance;
+	short PanicResistance;
+	short FearResistance;
+	short PoisonResistance;
+	short BlindResistance;
+	short CurseResistance;
+	short ParalyzeResistance;
+	short StunResistance;
+	short HeadBindResistance;
+	short ArmBindResistance;
+	short LegBindResistance;
+	short AlmgihtyResistance;
+	short UnkResistance;
+	short Drop1ID;
+	short Drop1Chance;
+	short Drop1ConditionID;
+	short Drop2ID;
+	short Drop2Chance;
+	short Drop2ConditionID;
+	short Drop3ID;
+	short Drop3Chance;
+	short Drop3ConditionID;
+	short unk4;
+	short pad;
+}move[360];
+} file;

@@ -1,0 +1,85 @@
+//--- 010 Editor v9.0.2 Binary Template
+//
+//      File: Skills
+//   Authors: Tilde
+//   Version: 1.00
+//   Purpose: 
+//  Category: Unknown file
+// File Mask: 
+//  ID Bytes: 
+//   History: 
+//------------------------------------------------
+LittleEndian();
+
+struct File {
+    struct Move{
+    byte MaxLevel<bgcolor=cBlack>;
+	byte DamageType<bgcolor=cBlack>;
+	short unk;
+	struct wepReq{
+		short bit0 : 1<name="Head">;
+		short bit1 : 1<name="Arm">;
+		short bit2 : 1<name="Leg">;
+		short bit3 : 1<name="Sword">;
+		short bit4 : 1<name="Bow">;
+		short bit5 : 1<name="Katana">;
+		short bit6 : 1<name="Staff">;
+		short bit7 : 1<name="Gun">;
+		short bit8 : 1<name="Spear">;
+		short bit9 : 1<name="Rapier">;
+		short bit10 : 1<name="Daggers">;
+		short bit11 : 1<name="Drive Blade">;
+		short bit12 : 1<name="Cestus">;
+		short bit13 : 1<name="Scythe">;
+		short bit14 : 1<name=" ">;
+		short bit15 : 1<name="Shield">;
+	}wepreq<name="Weapon/Body Requirement">;
+	short unk;
+	byte unk;
+	byte range;
+    short unk;
+    int unk;
+	byte targetType;
+	byte Ally_EnemyTarget;
+	byte availability;
+	byte buff_debuff;
+	int statMod;
+	struct Element{
+		int bit0 : 1<name="Cut">;
+		int bit1 : 1<name="Bash">;
+		int bit2 : 1<name="Stab">;
+		int bit3 : 1<name="Fire">;
+		int bit4 : 1<name="Ice">;
+		int bit5 : 1<name="Volt">;
+		int bit6 : 1<name="Almighty">;
+		int bit7 : 1<name="???">;
+	}element<name="Element Type">;
+	struct Ailment{
+		short bit0 : 1<name="Head">;
+		short bit1 : 1<name="Instant Death">;
+		short bit2 : 1<name="Petrification">;
+		short bit3 : 1<name="Sleep">;
+		short bit4 : 1<name="Panic">;
+		short bit5 : 1<name=" ">;
+		short bit6 : 1<name="Poison">;
+		short bit7 : 1<name="Blind">;
+		short bit8 : 1<name="Curse">;
+		short bit9 : 1<name="Paralyze">;
+		short bit10 : 1<name="Stun">;
+		short bit11 : 1<name="Head Bind">;
+		short bit12 : 1<name="Arm Bind">;
+		short bit13 : 1<name="Leg Bind">;
+	}ailment<name="Status Ailment">;
+	short unk;
+	int unk;
+    
+    
+    local int i = 0;
+    for(i = 0; i < 12; i++){
+        struct SubHeader {
+            int subHeader<bgcolor=cLtGreen>; 
+            int Values[11]<bgcolor=cYellow>;
+        } entry;
+    }
+}move[901];
+} file;
