@@ -1,0 +1,56 @@
+//--- 010 Editor v9.0.2 Binary Template
+//
+//      File: Skills
+//   Authors: Tilde
+//   Version: 1.00
+//   Purpose: 
+//  Category: Unknown file
+// File Mask: 
+//  ID Bytes: 
+//   History: 
+//------------------------------------------------
+LittleEndian();
+
+struct File {
+
+        int magic[2]<bgcolor=cLtGreen>; 
+        int pad;
+        int skillNumber;
+		int pointer1;
+		int prereqSkills;
+		int pointer2;
+		int lineNumber;
+		int pointer3;
+		
+	
+	struct Skills{
+		short skillID;
+		byte skillNumber;
+		byte forceType;
+		short XPos;
+		short YPos;
+		short TopFlowover;
+		short BottomFlowover;
+		short LeftFlowover;
+		short RightFlowover;
+		short unk;
+		short skillPage;
+	}skills[skillNumber];
+	struct Lines{
+		short XPos1;
+		short YPos1;
+		short XPos2;
+		short YPos2;
+		int unk;
+	}lines[lineNumber];
+	
+	struct Requirement{
+		short LockedSkill;
+		short RequiredSkill;
+		short RequiredLevel;
+		short xPos;
+		short yPos;
+		short unk;
+	}requirement[prereqSkills];
+
+} file;

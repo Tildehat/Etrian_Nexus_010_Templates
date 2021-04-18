@@ -1,0 +1,44 @@
+//--- 010 Editor v9.0.2 Binary Template
+//
+//      File: Skills
+//   Authors: Tilde
+//   Version: 1.00
+//   Purpose: 
+//  Category: Unknown file
+// File Mask: 
+//  ID Bytes: 
+//   History: 
+//------------------------------------------------
+LittleEndian();
+
+struct File {
+
+        int filename[4]<bgcolor=cLtGreen>; 
+        int pad;
+		int pointer1;
+		int section1Num;
+		int pointer2;
+		int section2Num;
+		int pointer3;
+		int section3Num;
+		int pointer4;
+		
+	FSeek(pointer1);
+	struct Section1{
+		float unk[0x14];
+	}section1[section1Num];
+	
+	FSeek(pointer2);
+	struct Section2{
+		int unk[5];
+	}section2[section2Num];
+	
+	FSeek(pointer3);
+	struct Section3{
+		int Section2Index;
+		int unk;
+		int relativePosFileName;
+		int NumSection2Blocks;
+	}section3[section3Num];
+
+} file;
