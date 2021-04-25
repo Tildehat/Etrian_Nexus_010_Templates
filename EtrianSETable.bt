@@ -1,0 +1,27 @@
+//--- 010 Editor v9.0.2 Binary Template
+//
+//      File: Skills
+//   Authors: Tilde
+//   Version: 1.00
+//   Purpose: 
+//  Category: Unknown file
+// File Mask: 
+//  ID Bytes: 
+//   History: 
+//------------------------------------------------
+LittleEndian();
+
+struct File {
+
+	local int SkillNum = FileSize()/ 0x154;
+	
+	
+		struct SkillSE{
+		
+			struct String{
+				byte SEString[0x42];
+				short timing;
+			}soundEffect[5];
+		
+		}se[SkillNum];
+} file;
